@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { PrincipalPage, AjustesPage} from '../index.pages';
+import { Ajustes2Page } from '../ajustes2/ajustes2';
 /**
  * Generated class for the TabsPage page.
  *
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabsPage {
 
+  tab1: any;
+  tab2: any;
+  tab3: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.tab1 = PrincipalPage;
+    this.tab2 = AjustesPage;
+    this.tab3 = Ajustes2Page;
   }
 
   ionViewDidLoad() {

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Page } from 'ionic-angular/umd/navigation/nav-util';
 import { Pagina2Page } from '../pagina2/pagina2';
-import { Page } from '../../../node_modules/ionic-angular/umd/navigation/nav-util';
+
 /**
  * Generated class for the PrincipalPage page.
  *
@@ -15,8 +16,9 @@ import { Page } from '../../../node_modules/ionic-angular/umd/navigation/nav-uti
   templateUrl: 'principal.html',
 })
 export class PrincipalPage {
+  
+  pagina2: Page = Pagina2Page;
 
-  public pagina2: Page = Pagina2Page;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -24,10 +26,8 @@ export class PrincipalPage {
     console.log('ionViewDidLoad PrincipalPage');
   }
 
-  navegarPagina(){
-    this.navCtrl.push(Pagina2Page)
+  irPagina(){
+    this.navCtrl.push(Pagina2Page);
   }
-
-  
 
 }

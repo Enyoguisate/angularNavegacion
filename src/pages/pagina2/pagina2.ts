@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Page } from 'ionic-angular/umd/navigation/nav-util';
 import { Pagina3Page } from '../pagina3/pagina3';
-import { Page } from '../../../node_modules/ionic-angular/umd/navigation/nav-util';
 
 /**
  * Generated class for the Pagina2Page page.
@@ -17,14 +17,15 @@ import { Page } from '../../../node_modules/ionic-angular/umd/navigation/nav-uti
 })
 export class Pagina2Page {
 
-  public mutantes: any[] = [
-    { nombre: 'Magneto', poder: 'Controlar metales'},
-    { nombre: 'Wolverine', poder: 'Regeneracion'},
-    { nombre: 'Profesor X', poder: 'Control Mental'},
-    { nombre: 'Gambito', poder: 'Cargar energia a objetos'},
-  ];
-
   pagina3: Page = Pagina3Page;
+
+  mutantes: any[] = [
+    { nombre: 'Wolverine', poder: 'Regeneracion' },
+    { nombre: 'Magneto', poder: 'Control Metal' },
+    { nombre: 'Jean Gray', poder: 'Control Mental' },
+    { nombre: 'Gambito', poder: 'Cargar objetos de energia' },
+    { nombre: 'Profesor X', poder: 'Control Mental' }
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -33,7 +34,8 @@ export class Pagina2Page {
     console.log('ionViewDidLoad Pagina2Page');
   }
 
-  irPagina3(mutante: any){
-    this.navCtrl.push( Pagina3Page, { 'mutante': mutante } );
+  enviarMutante(mutante){
+    this.navCtrl.push( this.pagina3, { 'mutante': mutante });
   }
+
 }

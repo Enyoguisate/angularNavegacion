@@ -7,23 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Pagina 3</ion-title>
+    <ion-title>Pagina de {{ mutante.nombre }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          Name: {{mutante.nombre}}
+        </ion-card-title>
+        <p>
+          Poder: {{mutante.poder}}
+        </p>
+      </ion-card-content>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-card-title text-center>
-        Mutante: {{mutante.nombre}}
-      </ion-card-title>
-      <p text-center>
-        Poder: {{mutante.poder}}
-      </p>
-    </ion-card-content>
-  </ion-card>
-
+    <button ion-button full color="primary" (click)="irAtras()">ir atras con evento</button>
+    <button ion-button full color="secondary" (click)="irRoot()">ir al root</button>
+    <button ion-button full color="dark" navPop>ir atras</button>
 </ion-content>
